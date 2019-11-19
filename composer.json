@@ -4,10 +4,9 @@
   "description": "",
   "require": {
     "php": ">=7.0",
-    "orbiter/satellite": "*"
-  },
-  "require-dev": {
-    "filp/whoops": "^2.5"
+    "orbiter/satellite": "*",
+    "filp/whoops": "^2.5",
+    "symfony/var-dumper": "^4.3"
   },
   "autoload": {
     "files": [
