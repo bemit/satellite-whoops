@@ -1,0 +1,19 @@
+{
+  "name": "orbiter/satellite-whoops",
+  "license": "MIT",
+  "description": "",
+  "require": {
+    "php": ">=7.0",
+    "orbiter/satellite": "*"
+  },
+  "require-dev": {
+    "filp/whoops": "^2.5"
+  },
+  "autoload": {
+    "files": [
+      "niceDebug.php"
+    ]
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
