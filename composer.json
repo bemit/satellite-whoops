@@ -1,18 +1,16 @@
 {
-  "name": "orbiter/satellite-whoops",
-  "license": "MIT",
-  "description": "",
-  "require": {
-    "php": ">=7.0",
-    "orbiter/satellite": "*",
-    "filp/whoops": "^2.5",
-    "symfony/var-dumper": "^4.3"
-  },
-  "autoload": {
-    "files": [
-      "niceDebug.php"
-    ]
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+    "name": "orbiter/satellite-whoops",
+    "license": "MIT",
+    "description": "",
+    "require": {
+        "php": ">=7.0",
+        "filp/whoops": "^2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Satellite\\Whoops\\": "src"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
