@@ -3,7 +3,7 @@
     "license": "MIT",
     "description": "",
     "require": {
-        "php": ">=7.0",
+        "php": ">=7.4||>=8.0",
         "filp/whoops": "^2.5"
     },
     "autoload": {
