@@ -2,8 +2,9 @@
     "name": "orbiter/satellite-whoops",
     "license": "MIT",
     "description": "",
+    "version": "0.1.2",
     "require": {
-        "php": ">=7.4||>=8.0",
+        "php": ">=7.4||>=8.0||>=8.1",
         "filp/whoops": "^2.5"
     },
     "autoload": {

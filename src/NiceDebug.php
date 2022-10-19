@@ -3,19 +3,26 @@
 namespace Satellite\Whoops;
 
 class NiceDebug {
-    public static function enable($cli = false) {
-        $whoops = new \Whoops\Run;
+    public static function enable(
+        $cli = false,
+        ?string $editor = null,
+    ): void {
+        $whoops = new \Whoops\Run();
 
         if($cli) {
-            $whoops->prependHandler(new \Whoops\Handler\PlainTextHandler());
+            $handler = new \Whoops\Handler\PlainTextHandler();
         } else {
-            $type = filter_input(INPUT_SERVER, 'CONTENT_TYPE', FILTER_SANITIZE_STRING);
-            if(false !== strpos($type, 'application/json')) {
-                $whoops->prependHandler(new \Whoops\Handler\JsonResponseHandler());
+            $type = filter_input(INPUT_SERVER, 'CONTENT_TYPE');
+            if(str_contains($type, 'application/json')) {
+                $handler = new \Whoops\Handler\JsonResponseHandler();
             } else {
-                $whoops->prependHandler(new \Whoops\Handler\PrettyPageHandler);
+                $handler = new \Whoops\Handler\PrettyPageHandler();
+                if(is_string($editor)) {
+                    $handler->setEditor($editor);
+                }
             }
         }
+        $whoops->prependHandler($handler);
         $whoops->register();
     }
 }
